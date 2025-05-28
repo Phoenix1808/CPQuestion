@@ -1,0 +1,49 @@
+This contains the solution of finding subsequence of an array and to check if the sum of subsequent array is divisibile by given integer(here 3).
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool Subs(vector<int> &arr, int n) {
+    
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] % 3 == 0)
+            return true;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if ((arr[i] + arr[j]) % 3 == 0)
+                return true;
+        }
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            for (int k = j + 1; k < n; ++k) {
+                if ((arr[i] + arr[j] + arr[k]) % 3 == 0)
+                    return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+int main() {
+    int t;   cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        vector<int> a(N);
+        for (int i = 0; i < N; ++i)
+            cin >> a[i];
+
+        if (Subs(a, N))
+            cout << "Yes\n";
+        else
+            cout << "No\n";
+    }
+    return 0;
+}
