@@ -1,5 +1,5 @@
 This contains the solution of finding subsequence of an array and to check if the sum of subsequent array is divisibile by given integer(here 3).
-
+For each test case, output on a new line Yes or No depending on whether there exists a non-empty subsequence with sum divisible by 3 or not.
 
 
 #include <bits/stdc++.h>
